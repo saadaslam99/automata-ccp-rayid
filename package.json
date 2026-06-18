@@ -1,0 +1,7 @@
+{
+  "name": "tokenshield-monorepo",
+  "private": true,
+  "scripts": {
+    "vercel-build": "npm install --prefix frontend && npm run build --prefix frontend"
+  }
+}
