@@ -45,6 +45,7 @@ export default function App() {
       setData(adapted);
       
       startAnimation(adapted);
+    } catch (error) {
       console.error('API Error:', error);
       const isProd = import.meta.env.PROD;
       alert(`Failed to connect to the backend server.\n\n${isProd ? 'Vercel API request failed. Ensure your environment variables are set and the deployment succeeded.' : 'Ensure your local backend is running on port 8081.'}`);
