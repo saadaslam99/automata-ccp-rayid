@@ -39,7 +39,8 @@ export default function App() {
     setActiveState('q0');
     
     try {
-      const response = await axios.post('http://localhost:8081/api/analyze', { text: inputText });
+      const API_URL = import.meta.env.PROD ? '' : 'http://localhost:8081';
+      const response = await axios.post(`${API_URL}/api/analyze`, { text: inputText });
       const adapted = adaptBackendDataToVarToken(response.data);
       setData(adapted);
       

@@ -369,7 +369,11 @@ app.post('/api/analyze', async (req, res) => {
     });
 });
 
-const PORT = 8081;
-app.listen(PORT, () => {
-    console.log(`TokenShield Node.js Backend running on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 8081;
+    app.listen(PORT, () => {
+        console.log(`TokenShield Node.js Backend running on port ${PORT}`);
+    });
+}
+
+module.exports = app;
